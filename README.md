@@ -134,6 +134,10 @@ docker-compose run web rake db:create
 # Visit the following url
 http://localhost:3000
 
+yarn install 
+
+yarn add @rails/webpacker
+
 # webpacker install (normally it should be installed in the docker-compose run)
 docker-compose run web rails webpacker:install
 
