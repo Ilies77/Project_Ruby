@@ -92,12 +92,6 @@ exec "$@"
 docker-compose run --no-deps web rails new . --force --database=postgresql
 
 
-#LINUX !!!
-# If you are running Docker on Linux, the files rails new created are owned by root. 
-#This happens because the container runs as the root user. If this is the case, change the ownership of the new files.
-sudo chown -R $USER:$USER .
-
-
 # Now that you’ve got a new Gemfile, you need to build the image again
 # docker build
 docker-compose build
