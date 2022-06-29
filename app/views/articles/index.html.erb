@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ruby on Rails Tutorial Sample App</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <br>
+      <div class="container">
+            <form action="/calculate" method="get">
+              <input type="text" name="destination1" placeholder="Votre point de départ">
+              <input type="text" name="destination2" placeholder="Votre point d'arrivée">
+
+              <div>
+                <%= label_tag "Votre véhicule: "%>
+
+                <%= select_tag "vehicule", options_for_select([ "TVG", 
+                "Bus", "Voiture électrique", "Voiture", "Scooter", "Moto", "Avion" ]), prompt: 'Choisissez votre véhicule' %>
+
+            </div>
+
+              <input type="submit" value="Submit">
+            </form>
+
+            <div>
+                <p> Distance total entre <%= session[:destination1] %> et <%= session[:destination2] %> : <%= session[:distance] %> </p>
+                <p>Votre consommation total sera de: <%= @consommation.inspect %> kgCO2e</p>
+            </div>
+      </div>
+
+  </body>
+</html>
