@@ -30,6 +30,10 @@ class ArticlesController < ApplicationController
       when "TGV"
         @consommation = distance.to_i*0.002
         render 'articles/index'
+      
+      when "Bus"
+        @consommation = distance.to_i*0.1
+        render 'articles/index'
 
       when "Voiture électrique"
         @consommation = distance.to_i*0.02
